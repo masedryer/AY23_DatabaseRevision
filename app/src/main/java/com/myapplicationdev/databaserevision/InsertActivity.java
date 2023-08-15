@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,8 +35,20 @@ public class InsertActivity extends AppCompatActivity {
                 DBHelper db = new DBHelper(InsertActivity.this);
 
 
-                db.insertTask();
-                db.close();
+                if(etContent.getText().toString().isEmpty()){
+                    etContent.setError("Cannot be left blank");
+                }
+                else if(etPriority.getText().toString().isEmpty()){
+                    etPriority.setError("Cannot be left blank");
+                }
+                else{
+                    String content = etContent.getText().toString();
+                    int priority = Integer.parseInt(etPriority.getText().toString());
+
+                    db.insertTask(content, priority);
+                    db.close();
+                    Toast.makeText(InsertActivity.this, "Task added", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
