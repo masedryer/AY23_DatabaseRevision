@@ -33,13 +33,19 @@ public class RetrieveActivityListView extends AppCompatActivity {
         btnGetNotes.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                // Create the DBHelper object, passing in the activity's Context
+
+              DBHelper db = new DBHelper(RetrieveActivityListView.this);
+
 
             }
         });
 
 
         //Option: Implement dialog to edit a record
+
+
+
+
         //Option: Implement context to delete a record
 
     }

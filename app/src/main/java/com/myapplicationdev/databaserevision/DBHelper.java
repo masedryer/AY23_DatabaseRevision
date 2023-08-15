@@ -94,7 +94,30 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Edit?
-    //Delete?
 
+    public int updateNote(Note data){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+
+        values.put(COLUMN_CONTENT, data.getContent());
+        values.put(COLUMN_PRIORITY,data.getPriority());
+
+        String condition = COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(data.getId())};
+        int result = db.update(TABLE_NOTE, values,condition,args);
+        db.close();
+        return result;
+    }
+
+    public int deleteMovies(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String condition = COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(id)};
+          int result = db.delete(TABLE_NOTE, condition, args);
+          db.close();
+          return result;
+    }
 }
+
 
