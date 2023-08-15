@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".RetrieveActivityTextView">
+
+
+    <Button
+        android:id="@+id/btnGetTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Retrieve Notes" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/tvResults"
+            android:backgroundTint="@color/material_dynamic_secondary95"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00ddff" />
+
+    </ScrollView>
+
+
+</LinearLayout>
