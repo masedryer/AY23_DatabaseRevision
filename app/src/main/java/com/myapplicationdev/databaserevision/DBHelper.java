@@ -126,6 +126,7 @@ public class DBHelper extends SQLiteOpenHelper {
           int result = db.delete(TABLE_NOTE, condition, args);
           db.close();
           return result;
+          ///
     }
 }
 
