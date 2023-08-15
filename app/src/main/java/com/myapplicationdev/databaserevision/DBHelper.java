@@ -119,7 +119,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public int deleteMovies(int id){
+    public int deleteNote(int id){
         SQLiteDatabase db = this.getWritableDatabase();
         String condition = COLUMN_ID + "= ?";
         String[] args = {String.valueOf(id)};
